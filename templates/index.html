@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="w-full">
+        <!-- navbar section -->
+        <div class="w-full fixed top-0 bg-blue-600 h-20 p-5">
+            <nav class="w-full flex items-center justify-between">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-brain text-2xl text-white"></i>
+                    <a class="text-2xl font-bold text-white" href="">NeuraScan</a>
+                </div>
+                <div class="lg:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                </div>
+                <div id="menu" class="hidden lg:flex gap-5">
+                <a class="text-xl text-white font-semibold" href="#">Detection</a>
+                <a class="text-xl text-white font-semibold" href="#">Symptoms</a>
+                </div>
+            </nav>
+            <div id="mobile-menu" class="hidden flex-col gap-5 mt-5 lg:hidden">
+                <a class="text-xl text-white font-semibold" href="#">About</a>
+                <a class="text-xl text-white font-semibold" href="#">How it Works</a>
+                <a class="text-xl text-white font-semibold" href="#">Detection</a>
+                <a class="text-xl text-white font-semibold" href="#">Symptoms</a>
+            </div>
+        </div>
+        <!-- hero/landing section -->
+        <div class="w-full pt-40 flex items-center justify-center flex-col">
+            <div class="flex flex-col">
+                <h1 class="text-[8.5vw] sm:text-[3vw] md:text-[5vw] lg:text-[3.5vw] font-semibold text-center">Brain Tumor Detection</h1>
+                <h2 class="text-[5vw] text-center sm:text-[1.8vw] md:text-[3vw] lg:text-[1.8vw] mt-1">Using Advanced Deep Learning for Early Detection</h2>
+            </div>
+            <div class="mt-5">
+                <a href="" class="py-2 px-5 bg-black text-white rounded-md">Try it now -></a>
+            </div>
+        </div>
+
+        <!-- how it works -->
+        <div class="p-5 mt-24">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold">How it Works</h1>
+            <!-- cards -->
+             <div class="cards w-full flex gap-5 mt-10 flex-col md:flex-row lg:flex-row">
+                <div class="card w-full md:w-2/6 lg:w-2/6 p-5 border-2 border-gray-200 rounded-md">
+                    <div class="flex items-center justify-center w-fit gap-3">
+                        <i class="fa-solid fa-upload text-2xl"></i>
+                        <h1 class="text-2xl font-medium">Upload Scan</h1>
+                    </div>
+                    <p class="mt-8 text-lg">
+                        Upload your MRI scan image securely to our platform.
+                    </p>
+                </div>
+                <div class="card w-full md:w-2/6 lg:w-2/6 p-5 border-2 border-gray-200 rounded-md">
+                    <div class="w-fit flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-brain text-2xl "></i>
+                        <h1 class="text-2xl font-medium">AI Analysis</h1>
+                    </div>
+                    <p class="mt-8 text-lg">
+                        Our deep learning model analyzes the image for potential anomalies.
+                    </p>
+                </div>
+                <div class="card w-full  md:w-2/6 lg:w-2/6 p-5 border-2 border-gray-200 rounded-md">
+                    <div class="flex items-center justify-center w-fit gap-3">
+                        <i class="fa-regular fa-circle-check text-2xl"></i>
+                        <h1 class="text-2xl font-medium">Get Results</h1>
+                    </div>
+                    <p class="mt-8 text-lg">
+                        Receive a preliminary assessment report within minutes.
+                    </p>
+                </div>
+             </div>
+        </div>
+        <!-- uploading MRI scan image section -->
+         <div class="p-5">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold">Brain Tumor Detection</h1>
+         </div>
+         <div class="w-full flex items-center justify-center mt-7">
+             <div class="container  w-1/2 p-5 rounded-lg border-2 border-gray-200">
+                 <h1 class="text-2xl text-center font-medium">BRAIN TUMOR DETECTION</h1>
+                 <p class="text-lg text-center mt-5">Upload a MRI image for classification and tumor detection.</p>
+                 <form class="mt-14 flex flex-col items-center justify-center gap-5" action="/predict" id="uploadForm" method="post" enctype="multipart/form-data">
+                     <input class="border-2 border-blue-600 p-3 rounded-md" type="file" name="file" accept="image/*" required>
+                     <button class="px-5 py-2 bg-blue-600 rounded-md text-white" type="submit">Predict and Classify</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="w-full bg-blue-600 p-5 mt-10">
+            <footer class="w-full flex flex-col gap-10 md:gap-0 lg:gap-0 md:flex-row lg:flex-row justify-between text-white ">
+                <div class="w-full md:w-1/2 lg:w-1/2  flex flex-col items-start">
+                    <h1 class="text-xl font-medium">Quick Links</h1>
+                    <div class="mt-5 flex flex-col gap-2">
+                        <a href="">About</a>
+                        <a href="">How it Works</a>
+                        <a href="">Detection</a>
+                        <a href="">Symptomps</a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/2">
+                    <h1 class="text-xl font-medium">NeuraScan</h1>
+                    <p class="text-md mt-5 text-justify">
+                        NeuraScan is committed to advancing healthcare through innovative AI solutions. Our brain tumor detection tool is designed to support early diagnosis and improve patient outcomes.
+                    </p>
+                </div> 
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+      
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      </script>
+</body>
+</html>
